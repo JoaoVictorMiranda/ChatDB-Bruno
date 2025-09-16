@@ -10,7 +10,7 @@ const endpoints = Router()
 
 
 endpoints.post('/sala', auth, async (req, res) => {
-    let nome = req.body;
+    let nome = req.body.nome;
     let usuarioId = req.user.id;
 
     let id = await repo.inserirSala(nome, usuarioId);
