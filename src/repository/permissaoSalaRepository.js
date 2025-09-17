@@ -1,13 +1,6 @@
 import { connection } from "./connection.js";
 
 
-export async function inserirPermissao(salaId, usuarioId, permissao) {
-    let comando = `
-        INSERT INTO salaPermissao (sala_id, usuario_id, aprovado) VALUES (?, ?, ?);
-    `
-    let [info] = await connection.query(comando, [salaId, usuarioId, permissao]);
-    return info.affectedRows;
-}
 
 
 export async function pedirPermissao(salaId, userId) {
